@@ -9,7 +9,7 @@ class BaseModel(Model):
 
 class CATEGORIA(BaseModel):
     id = PrimaryKeyField
-    descricao = TextField
+    descricao = TextField (unique = True)
     
 class CLIENTE(BaseModel):
     id = PrimaryKeyField
@@ -37,6 +37,7 @@ class VENDAS(BaseModel):
     quantidade = IntegerField
     valor_unitario = FloatField
     valor_total = FloatField
+
 
 db.create_tables[CATEGORIA, CLIENTE, PRODUTOS, HISTORICO_PRECOS,VENDAS]
 
